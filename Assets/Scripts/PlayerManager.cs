@@ -17,8 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject player;
 
-    [SerializeField]
-    private Statistics playerStats;
+    public Statistics playerStats;
     private int[] statCollect;
     private int playerStrength, playerAgility, playerDexterity, playerDetermination, playerIntelect, playerPerception;
 
