@@ -7,6 +7,7 @@ public class TeamController : MonoBehaviour
 {
     private int teamStrength, teamAgility, teamDexterity, teamDetermination, teamIntellect, teamPerception;
     private PlayerManager mainPlayerManager;
+    private Movement chosenMovement;
     public GameObject[] teamComp = new GameObject[4];
     public enum Characters
     {
@@ -26,13 +27,14 @@ public class TeamController : MonoBehaviour
 
     public Characters[] teamOrder = new Characters[4];
 
-    public Transform[] playerPositions = new Transform[4];
+    public GameObject[] playerPositions = new GameObject[4];
 
     public Positions chosenCharacter;
 
     private void Start()
     {
         SpawnPlayers();
+        SelectChosen();
         GetData();
     }
 
@@ -41,7 +43,7 @@ public class TeamController : MonoBehaviour
         for(int i = 0; i < playerPositions.Length; i++)
         {
             int selectedCharacter = (int)teamOrder[i];
-            Instantiate(teamComp[selectedCharacter], playerPositions[i]);
+            Instantiate(teamComp[selectedCharacter], playerPositions[i].transform);
         }
     }
 
@@ -58,6 +60,13 @@ public class TeamController : MonoBehaviour
         teamDetermination = statCollect[3];
         teamIntellect = statCollect[4];
         teamPerception = statCollect[5];
+    }
+
+    private void SelectChosen()
+    {
+        int selectedCharacter = (int)chosenCharacter;
+        chosenMovement = playerPositions[selectedCharacter].GetComponent<Movement>();
+        chosenMovement.isChosen = true;
     }
 
 }
