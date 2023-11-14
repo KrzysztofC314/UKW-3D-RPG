@@ -9,13 +9,18 @@ public class Dialog : MonoBehaviour
     public TMP_Text dialogText;
     public Button[] answerButtons;
     public GameManager gameManager;
+    public FlagManager FlagManager;
 
     public float DialogDelay = 0;
     public int DialogStage = 0;
     public bool dialogActivated = false;
 
+    private bool D1 = true;
+    private bool D2 = true;
+    private bool D3 = true;
+
     //public AudioSource audioSource;
-   // public AudioClip[] audioClips; 
+    // public AudioClip[] audioClips; 
 
     private float countdownTimer = 1f; // do timera
 
@@ -131,18 +136,22 @@ public class Dialog : MonoBehaviour
     {
             dialogText.gameObject.SetActive(true);
             dialogText.text = "Witaj podró¿niku, odpowiedz mi na pytanie. Co by³o pierwsze, jajko czy kura?";
-           // audioSource.clip = audioClips[0];
-           // audioSource.Play();
-           // DialogDelay = 3.5f;
+        // audioSource.clip = audioClips[0];
+        // audioSource.Play();
+        // DialogDelay = 3.5f;
 
-        answerButtons[0].gameObject.SetActive(true);
-        answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Kura";
-
+        if (FlagManager.Flag == 0)
+        {
+            answerButtons[0].gameObject.SetActive(true);
+            answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Kura";
+        }
+       
         answerButtons[1].gameObject.SetActive(true);
         answerButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Jajko";
-
+       
         answerButtons[2].gameObject.SetActive(true);
         answerButtons[2].GetComponentInChildren<TextMeshProUGUI>().text = "Pterodaktyl";
+     
 
         answerButtons[3].gameObject.SetActive(true);
         answerButtons[3].GetComponentInChildren<TextMeshProUGUI>().text = "Nie wiem [KONIEC]";
@@ -156,16 +165,19 @@ public class Dialog : MonoBehaviour
         {
             Clean();
             DialogStage = 2;
+            D1 = false;
         });
         answerButtons[1].onClick.AddListener(() =>
         {
             Clean();
             DialogStage = 3;
+            D2 = false;
         });
         answerButtons[2].onClick.AddListener(() =>
         {
             Clean();
             DialogStage = 4;
+            D3 = false;
         });
         answerButtons[3].onClick.AddListener(() =>
         {
@@ -248,14 +260,23 @@ public class Dialog : MonoBehaviour
         dialogText.gameObject.SetActive(true);
         dialogText.text = "Co by³o pierwsze, jajko czy kura?";
 
-        answerButtons[0].gameObject.SetActive(true);
-        answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Kura";
+        if (D1 == true)
+        {
+            answerButtons[0].gameObject.SetActive(true);
+            answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Kura";
+        }
 
-        answerButtons[1].gameObject.SetActive(true);
-        answerButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Jajko";
+        if (D2 == true)
+        {
+            answerButtons[1].gameObject.SetActive(true);
+            answerButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Jajko";
+        }
 
-        answerButtons[2].gameObject.SetActive(true);
-        answerButtons[2].GetComponentInChildren<TextMeshProUGUI>().text = "Pterodaktyl";
+        if (D3 == true)
+        {
+            answerButtons[2].gameObject.SetActive(true);
+            answerButtons[2].GetComponentInChildren<TextMeshProUGUI>().text = "Pterodaktyl";
+        }
 
         answerButtons[3].gameObject.SetActive(true);
         answerButtons[3].GetComponentInChildren<TextMeshProUGUI>().text = "Nie wiem [KONIEC]";
