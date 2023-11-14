@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
     private NavMeshAgent agent;
     private string groundTag = "Ground";
     [SerializeField] private float stopDistance;
+    [SerializeField] private TeamController teamController;
+    private bool isDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +23,13 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isChosen)
+        isDialogue = teamController.isDialogue;
+        if (!isDialogue) 
         {
-            ChosenPlayerMovement();
+            if (isChosen)
+            {
+                ChosenPlayerMovement();
+            }
         }
     }
 

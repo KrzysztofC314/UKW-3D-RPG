@@ -9,6 +9,7 @@ public class TeamController : MonoBehaviour
     private PlayerManager mainPlayerManager;
     private Movement chosenMovement;
     public GameObject[] teamComp = new GameObject[4];
+    [HideInInspector] public bool isDialogue;
     public enum Characters
     {
         Player1 = 0,

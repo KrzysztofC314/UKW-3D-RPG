@@ -14,6 +14,7 @@ public class Dialog : MonoBehaviour
     public float DialogDelay = 0;
     public int DialogStage = 0;
     public bool dialogActivated = false;
+    [SerializeField] private TeamController teamController;
 
     private bool D1 = true;
     private bool D2 = true;
@@ -94,6 +95,7 @@ public class Dialog : MonoBehaviour
     }
     void Update()
     {
+        teamController.isDialogue = dialogActivated;
         if (DialogDelay > 0f) // Odejmowanie 1 od DialogDelay co sekundê
         {
             countdownTimer -= Time.deltaTime; 
