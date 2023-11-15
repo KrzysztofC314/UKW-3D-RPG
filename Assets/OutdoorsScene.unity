@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2158.5605, g: 2263.8887, b: 3290.2344, a: 1}
+  m_IndirectSpecularColor: {r: 2160.4014, g: 2264.6074, b: 3288.0938, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -472,15 +472,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140696799}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93d70f86b9554784c8966e88a5806a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isChosen: 0
   camera: {fileID: 1823688466}
-  stopDistance: 0
+  stopDistance: 1
   teamController: {fileID: 679031948}
+  chosenLocation: {x: 0, y: 0, z: 0}
 --- !u!195 &140696802
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1819,6 +1820,7 @@ MonoBehaviour:
   - {fileID: 7853588686682411078, guid: 0b416ccb151848d48b7572505532a49d, type: 3}
   - {fileID: 7778207838431844919, guid: bbe1d583089a89b49a70801cd96bf18f, type: 3}
   isDialogue: 0
+  movementTrack: {x: 0, y: 0, z: 0}
   teamOrder: 00000000010000000200000003000000
   playerPositions:
   - {fileID: 845930904}
@@ -2088,8 +2090,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isChosen: 0
   camera: {fileID: 1823688466}
-  stopDistance: 0
+  stopDistance: 1
   teamController: {fileID: 679031948}
+  chosenLocation: {x: 0, y: 0, z: 0}
 --- !u!195 &845930907
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2480,15 +2483,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260012391}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93d70f86b9554784c8966e88a5806a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isChosen: 0
   camera: {fileID: 1823688466}
-  stopDistance: 0
+  stopDistance: 1
   teamController: {fileID: 679031948}
+  chosenLocation: {x: 0, y: 0, z: 0}
 --- !u!195 &1260012394
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2740,8 +2744,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isChosen: 0
   camera: {fileID: 1823688466}
-  stopDistance: 0
+  stopDistance: 1
   teamController: {fileID: 679031948}
+  chosenLocation: {x: 0, y: 0, z: 0}
 --- !u!195 &1406622216
 NavMeshAgent:
   m_ObjectHideFlags: 0

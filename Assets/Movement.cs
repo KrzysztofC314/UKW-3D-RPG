@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float stopDistance;
     [SerializeField] private TeamController teamController;
     private bool isDialogue;
+    public Vector3 chosenLocation;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,13 @@ public class Movement : MonoBehaviour
         {
             if (isChosen)
             {
+                chosenLocation = transform.position;
                 ChosenPlayerMovement();
+            }
+            else
+            {
+                chosenLocation = teamController.movementTrack;
+                FollowPlayerMovement();
             }
         }
     }
@@ -47,6 +54,11 @@ public class Movement : MonoBehaviour
                 }
             }
         }
+    }
+    private void FollowPlayerMovement()
+    {
+        Vector3 followLocation = chosenLocation + new Vector3(stopDistance, 0, stopDistance);
+        agent.SetDestination(followLocation);
     }
 
     //private Vector3 CalculateDestination(Vector3 target)

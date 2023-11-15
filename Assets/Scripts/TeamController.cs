@@ -10,6 +10,7 @@ public class TeamController : MonoBehaviour
     private Movement chosenMovement;
     public GameObject[] teamComp = new GameObject[4];
     [HideInInspector] public bool isDialogue;
+    [HideInInspector] public Vector3 movementTrack;
     public enum Characters
     {
         Player1 = 0,
@@ -37,6 +38,11 @@ public class TeamController : MonoBehaviour
         SpawnPlayers();
         SelectChosen();
         GetData();
+    }
+
+    private void Update()
+    {
+        TrackMovement();
     }
 
     private void SpawnPlayers()
@@ -68,6 +74,12 @@ public class TeamController : MonoBehaviour
         int selectedCharacter = (int)chosenCharacter;
         chosenMovement = playerPositions[selectedCharacter].GetComponent<Movement>();
         chosenMovement.isChosen = true;
+    }
+    private void TrackMovement()
+    {
+        int selectedCharacter = (int)chosenCharacter;
+        chosenMovement = playerPositions[selectedCharacter].GetComponent<Movement>();
+        movementTrack = chosenMovement.chosenLocation;
     }
 
 }
