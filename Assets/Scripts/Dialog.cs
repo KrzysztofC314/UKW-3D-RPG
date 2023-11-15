@@ -112,25 +112,52 @@ public class Dialog : MonoBehaviour
         }
 
         // wywo³ywanie private void
-        if (DialogStage == 1) 
+        if (gameManager.Language == 0)
         {
-            Stage1();
+            if (DialogStage == 1)
+            {
+                Stage1();
+            }
+            if (DialogStage == 2)
+            {
+                Stage2();
+            }
+            if (DialogStage == 3)
+            {
+                Stage3();
+            }
+            if (DialogStage == 4)
+            {
+                Stage4();
+            }
+            if (DialogStage == 5)
+            {
+                Stage5();
+            }
         }
-        if (DialogStage == 2)
+
+        if (gameManager.Language == 1)
         {
-            Stage2();
-        }
-        if (DialogStage == 3)
-        {
-            Stage3();
-        }
-        if (DialogStage == 4)
-        {
-            Stage4();
-        }
-        if (DialogStage == 5)
-        {
-            Stage5();
+            if (DialogStage == 1)
+            {
+                Stage01();
+            }
+            if (DialogStage == 2)
+            {
+                Stage02();
+            }
+            if (DialogStage == 3)
+            {
+                Stage03();
+            }
+            if (DialogStage == 4)
+            {
+                Stage04();
+            }
+            if (DialogStage == 5)
+            {
+                Stage05();
+            }
         }
     }
 
@@ -282,6 +309,178 @@ public class Dialog : MonoBehaviour
 
         answerButtons[3].gameObject.SetActive(true);
         answerButtons[3].GetComponentInChildren<TextMeshProUGUI>().text = "Nie wiem [KONIEC]";
+
+        answerButtons[0].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 2;
+        });
+        answerButtons[1].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 3;
+        });
+        answerButtons[2].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 4;
+        });
+        answerButtons[3].onClick.AddListener(() =>
+        {
+            Deactivate();
+        });
+    }
+
+
+
+
+
+
+    public void Stage01()
+    {
+        dialogText.gameObject.SetActive(true);
+        dialogText.text = "Hello traveler, answer my question. Which came first, the egg or the chicken?";
+        // audioSource.clip = audioClips[0];
+        // audioSource.Play();
+        // DialogDelay = 3.5f;
+
+        
+        answerButtons[0].gameObject.SetActive(true);
+        answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Chicken";
+
+        answerButtons[1].gameObject.SetActive(true);
+        answerButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Egg";
+
+        answerButtons[2].gameObject.SetActive(true);
+        answerButtons[2].GetComponentInChildren<TextMeshProUGUI>().text = "Pterodactyl";
+
+        answerButtons[3].gameObject.SetActive(true);
+        answerButtons[3].GetComponentInChildren<TextMeshProUGUI>().text = "I don't know [END]";
+
+        // if (DialogDelay == 0)
+        // {
+        //     DialogStage = 2;
+        // }
+
+        answerButtons[0].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 2;
+            D1 = false;
+        });
+        answerButtons[1].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 3;
+            D2 = false;
+        });
+        answerButtons[2].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 4;
+            D3 = false;
+        });
+        answerButtons[3].onClick.AddListener(() =>
+        {
+            Deactivate();
+        });
+
+    }
+
+    public void Stage02()
+    {
+        dialogText.gameObject.SetActive(true);
+        dialogText.text = "No, it wasn't a chicken";
+
+        answerButtons[0].gameObject.SetActive(true);
+        answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Can you repeat the question?";
+
+        answerButtons[1].gameObject.SetActive(true);
+        answerButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "[END]";
+
+        answerButtons[0].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 5;
+        });
+
+        answerButtons[1].onClick.AddListener(() =>
+        {
+            Deactivate();
+        });
+    }
+
+    public void Stage03()
+    {
+        dialogText.gameObject.SetActive(true);
+        dialogText.text = "No, it wasn't an egg";
+
+        answerButtons[0].gameObject.SetActive(true);
+        answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Can you repeat the question?";
+
+        answerButtons[1].gameObject.SetActive(true);
+        answerButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "[END]";
+
+        answerButtons[0].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 5;
+        });
+
+        answerButtons[1].onClick.AddListener(() =>
+        {
+            Deactivate();
+        });
+    }
+
+    public void Stage04()
+    {
+        dialogText.gameObject.SetActive(true);
+        dialogText.text = "It is very possible that it was a pterodactyl";
+
+        answerButtons[0].gameObject.SetActive(true);
+        answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Can you repeat the question?";
+
+        answerButtons[1].gameObject.SetActive(true);
+        answerButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "[END]";
+
+        answerButtons[0].onClick.AddListener(() =>
+        {
+            Clean();
+            DialogStage = 5;
+        });
+
+        answerButtons[1].onClick.AddListener(() =>
+        {
+            Deactivate();
+        });
+    }
+
+    public void Stage05()
+    {
+        dialogText.gameObject.SetActive(true);
+        dialogText.text = "Which came first, the egg or the chicken?";
+
+        if (D1 == true)
+        {
+            answerButtons[0].gameObject.SetActive(true);
+            answerButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Chicken";
+        }
+
+        if (D2 == true)
+        {
+            answerButtons[1].gameObject.SetActive(true);
+            answerButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Egg";
+        }
+
+        if (D3 == true)
+        {
+            answerButtons[2].gameObject.SetActive(true);
+            answerButtons[2].GetComponentInChildren<TextMeshProUGUI>().text = "Pterodactyl";
+        }
+
+        answerButtons[3].gameObject.SetActive(true);
+        answerButtons[3].GetComponentInChildren<TextMeshProUGUI>().text = "I don't know [END]";
 
         answerButtons[0].onClick.AddListener(() =>
         {
