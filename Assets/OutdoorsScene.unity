@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2160.373, g: 2264.0742, b: 3286.6797, a: 1}
+  m_IndirectSpecularColor: {r: 2159.6045, g: 2265.3516, b: 3293.879, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1602,37 +1602,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.06
+      value: -17.97
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000008940697
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.67
+      value: 21.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.49325058
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.49325058
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5066595
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5066595
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
@@ -1647,7 +1647,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 451.537
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: e09aac8f6d1233244ae9d0229085bac1,
         type: 3}
@@ -1786,6 +1786,7 @@ MonoBehaviour:
   - {fileID: 1297754252}
   gameManager: {fileID: 1307265796}
   FlagManager: {fileID: 1307265797}
+  quest: {fileID: 1307265798}
   DialogDelay: 0
   DialogStage: 0
   dialogActivated: 0
@@ -2663,6 +2664,7 @@ GameObject:
   - component: {fileID: 1307265795}
   - component: {fileID: 1307265796}
   - component: {fileID: 1307265797}
+  - component: {fileID: 1307265798}
   m_Layer: 0
   m_Name: WszechKot
   m_TagString: Untagged
@@ -2699,6 +2701,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialog: 0
   Language: 1
+  ActivePlayer: 1
+  isTeam: 1
+  isPause: 0
 --- !u!114 &1307265797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2712,6 +2717,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Flag: 0
+--- !u!114 &1307265798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307265794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003fb2300696c949bdf02c0f9422797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questList: []
+  currentQuestList: []
+  quest1: 0
 --- !u!1 &1406622213
 GameObject:
   m_ObjectHideFlags: 0

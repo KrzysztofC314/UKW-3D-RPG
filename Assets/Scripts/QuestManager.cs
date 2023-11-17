@@ -9,6 +9,8 @@ public class QuestManager : MonoBehaviour
     public List<Quest> questList = new List<Quest>(); //Master Quest List
     public List<Quest> currentQuestList = new List<Quest>(); //Current Quest List
 
+    public bool quest1 = false;
+
     //private vars for our QuestObject
 
     private void Awake()

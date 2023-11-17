@@ -11,6 +11,8 @@ public class Dialog : MonoBehaviour
     public GameManager gameManager;
     public FlagManager FlagManager;
 
+    public QuestManager quest; // pierwsza opcja dialogowa po klikniêciu aktywuje quest1 = true
+
     public float DialogDelay = 0;
     public int DialogStage = 0;
     public bool dialogActivated = false;
@@ -195,6 +197,7 @@ public class Dialog : MonoBehaviour
             Clean();
             DialogStage = 2;
             D1 = false;
+            quest.quest1 = true;
         });
         answerButtons[1].onClick.AddListener(() =>
         {
@@ -230,6 +233,7 @@ public class Dialog : MonoBehaviour
         {
             Clean();
             DialogStage = 5;
+
         });
 
         answerButtons[1].onClick.AddListener(() =>
@@ -367,6 +371,7 @@ public class Dialog : MonoBehaviour
             Clean();
             DialogStage = 2;
             D1 = false;
+            quest.quest1 = true;
         });
         answerButtons[1].onClick.AddListener(() =>
         {
