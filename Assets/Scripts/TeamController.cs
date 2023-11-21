@@ -36,13 +36,12 @@ public class TeamController : MonoBehaviour
     private void Start()
     {
         SpawnPlayers();
-        SelectChosen();
         GetData();
     }
 
     private void Update()
     {
-        TrackMovement();
+
     }
 
     private void SpawnPlayers()
@@ -69,17 +68,6 @@ public class TeamController : MonoBehaviour
         teamPerception = statCollect[5];
     }
 
-    private void SelectChosen()
-    {
-        int selectedCharacter = (int)chosenCharacter;
-        chosenMovement = playerPositions[selectedCharacter].GetComponent<Movement>();
-        chosenMovement.isChosen = true;
-    }
-    private void TrackMovement()
-    {
-        int selectedCharacter = (int)chosenCharacter;
-        chosenMovement = playerPositions[selectedCharacter].GetComponent<Movement>();
-        movementTrack = chosenMovement.chosenLocation;
-    }
+    
 
 }

@@ -8,4 +8,14 @@ public class GameManager : MonoBehaviour
     public int ActivePlayer = 1;
     public bool isTeam = true;
     public bool isPause = false;
+
+    public void SetActivePlayerTo(int player)
+    {
+        ActivePlayer = player;
+    }
+
+    public void SwitchTeamstate()
+    {
+        isTeam = !isTeam;
+    }
 }

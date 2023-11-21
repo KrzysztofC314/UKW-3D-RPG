@@ -5,15 +5,19 @@ using UnityEngine.AI;
 
 public class Movement : MonoBehaviour
 {
-    [HideInInspector] public bool isChosen = false;
+    
     public Camera camera;
+    [SerializeField] GameManager gameManager;
     private RaycastHit hit;
     private NavMeshAgent agent;
     private string groundTag = "Ground";
     [SerializeField] private float stopDistance;
     [SerializeField] private TeamController teamController;
     private bool isDialogue;
-    public Vector3 chosenLocation;
+    private bool isMenu;
+    private bool isTeam;
+    [SerializeField] private int placeInTeam;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,16 +29,16 @@ public class Movement : MonoBehaviour
     void Update()
     {
         isDialogue = teamController.isDialogue;
-        if (!isDialogue) 
+        isMenu = gameManager.isMenu;
+        isTeam = gameManager.isTeam;
+        if (!isDialogue&&!isMenu) 
         {
-            if (isChosen)
+            if (!isTeam&&gameManager.ActivePlayer == placeInTeam)
             {
-                chosenLocation = transform.position;
                 ChosenPlayerMovement();
             }
-            else
+            else if(isTeam)
             {
-                chosenLocation = teamController.movementTrack;
                 FollowPlayerMovement();
             }
         }
@@ -57,53 +61,34 @@ public class Movement : MonoBehaviour
     }
     private void FollowPlayerMovement()
     {
-        Vector3 followLocation = chosenLocation + new Vector3(stopDistance, 0, stopDistance);
-        agent.SetDestination(followLocation);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if (hit.collider.CompareTag(groundTag))
+                {
+                    switch (placeInTeam)
+                    {
+                        case 1:
+                            agent.SetDestination(hit.point + new Vector3(stopDistance, 0, stopDistance));
+                            break;
+                        case 2:
+                            agent.SetDestination(hit.point + new Vector3(-stopDistance, 0, stopDistance));
+                            break;
+                        case 3:
+                            agent.SetDestination(hit.point + new Vector3(stopDistance, 0, -stopDistance));
+                            break;
+                        case 4:
+                            agent.SetDestination(hit.point + new Vector3(-stopDistance, 0, -stopDistance));
+                            break;
+                    }
+                }
+            }
+        }
     }
 
-    //private Vector3 CalculateDestination(Vector3 target)
-    //{
-    //    int playersCount = gameManager.isTeam ? 4 : allowedPlayers.Count;
-    //    Vector3[] offsets = new Vector3[4];
-
-    //    if (playersCount == 2)
-    //    {
-    //        offsets[0] = new Vector3(-stopDistance, 0, 0);
-    //        offsets[1] = new Vector3(stopDistance, 0, 0);
-    //    }
-    //    else if (playersCount == 3)
-    //    {
-    //        offsets[0] = new Vector3(-stopDistance, 0, stopDistance);
-    //        offsets[1] = new Vector3(stopDistance, 0, stopDistance);
-    //        offsets[2] = new Vector3(0, 0, -stopDistance);
-    //    }
-    //    else if (playersCount == 4)
-    //    {
-    //        offsets[0] = new Vector3(-stopDistance, 0, stopDistance);
-    //        offsets[1] = new Vector3(stopDistance, 0, stopDistance);
-    //        offsets[2] = new Vector3(-stopDistance, 0, -stopDistance);
-    //        offsets[3] = new Vector3(stopDistance, 0, -stopDistance);
-    //    }
-
-    //    Vector3 offset = gameManager.isTeam ? offsets[(int)thisPlayer] : offsets[allowedPlayers.IndexOf(thisPlayer)];
-    //    var direction = target - transform.position;
-    //    var angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up);
-    //    offset = RotateVector(offset, angle);
-
-    //    return target + offset;
-    //}
-
-    //private Vector3 RotateVector(Vector3 v, float angle)
-    //{
-    //    float radian = angle * Mathf.Deg2Rad;
-    //    float cosAngle = Mathf.Cos(radian);
-    //    float sinAngle = Mathf.Sin(radian);
-
-    //    return new Vector3(
-    //        v.x * cosAngle - v.z * sinAngle,
-    //        v.y,
-    //        v.x * sinAngle + v.z * cosAngle
-    //    );
-    //}
+    
 
 }
