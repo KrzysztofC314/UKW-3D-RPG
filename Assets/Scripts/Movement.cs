@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Movement : MonoBehaviour
 {
@@ -17,12 +19,31 @@ public class Movement : MonoBehaviour
     private bool isMenu;
     private bool isTeam;
     [SerializeField] private int placeInTeam;
-    
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();  
+        agent = GetComponent<NavMeshAgent>();
+
+
+        //Tu jest to od rozdzielania 
+        gameManager.Player1.onClick.AddListener(() =>
+        {
+            gameManager.isTeam = false;
+        });
+        gameManager.Player2.onClick.AddListener(() =>
+        {
+            gameManager.isTeam = false;
+        });
+        gameManager.Player3.onClick.AddListener(() =>
+        {
+            gameManager.isTeam = false;
+        });
+        gameManager.Player4.onClick.AddListener(() =>
+        {
+            gameManager.isTeam = false;
+        });
+        //A tu siê to gówno od rozdzielania koñczy
     }
 
     // Update is called once per frame
@@ -33,7 +54,7 @@ public class Movement : MonoBehaviour
         isTeam = gameManager.isTeam;
         if (!isDialogue&&!isMenu) 
         {
-            if (!isTeam&&gameManager.ActivePlayer == placeInTeam)
+            if (!isTeam && gameManager.ActivePlayer == placeInTeam)
             {
                 ChosenPlayerMovement();
             }
@@ -46,7 +67,7 @@ public class Movement : MonoBehaviour
 
     private void ChosenPlayerMovement()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
@@ -61,7 +82,7 @@ public class Movement : MonoBehaviour
     }
     private void FollowPlayerMovement()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
@@ -88,7 +109,10 @@ public class Movement : MonoBehaviour
             }
         }
     }
+    private bool IsPointerOverUI()
+    {
+        return EventSystem.current.IsPointerOverGameObject();
+    }
 
-    
 
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class GameManager : MonoBehaviour
     public bool isTeam = true;
     public bool isPause = false;
 
+    public Button Player1;
+    public Button Player2;
+    public Button Player3;
+    public Button Player4;
+
     public void SetActivePlayerTo(int player)
     {
         ActivePlayer = player;
@@ -18,4 +24,6 @@ public class GameManager : MonoBehaviour
     {
         isTeam = !isTeam;
     }
+
+   
 }
