@@ -64,7 +64,7 @@ public class Movement : MonoBehaviour
             }
         }
     }
-
+    //podstawowy skrypt od pod¹¿ania pojedyñczej postaci
     private void ChosenPlayerMovement()
     {
         if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
@@ -80,6 +80,7 @@ public class Movement : MonoBehaviour
             }
         }
     }
+    // skrypt od poruszania siê w grupie - po kontakcie raycasta z ziemi¹ skrypt kalkuluje pozycjê postaci w zale¿noœci od zmiennej placeInTeam
     private void FollowPlayerMovement()
     {
         if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())

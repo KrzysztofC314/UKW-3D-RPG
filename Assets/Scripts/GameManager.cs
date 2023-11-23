@@ -15,11 +15,12 @@ public class GameManager : MonoBehaviour
     public Button Player3;
     public Button Player4;
 
+    //Skrypt do zmieniania active playera w grze
     public void SetActivePlayerTo(int player)
     {
         ActivePlayer = player;
     }
-
+    //Skrypt do zmieniania boola isTeam w grze
     public void SwitchTeamstate()
     {
         isTeam = !isTeam;

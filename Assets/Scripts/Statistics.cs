@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterStatistics", menuName = "ScriptableObjects/Statistics")]
 public class Statistics : ScriptableObject
 {
+    //Dane postaci
     public enum Sex
     {
         M,
@@ -51,7 +52,9 @@ public class Statistics : ScriptableObject
 
     private int LvlUpModify = 20;
     private int PPModify = 20;
+    //Koniec danych postaci
 
+    //Skrypt od kuku
     public void Damage(int damagePoints)
     {
         currentHealthPoints -= damagePoints;
@@ -62,7 +65,7 @@ public class Statistics : ScriptableObject
             currentHealthPoints = 0;
         }
     }
-
+    //Skrypt od leczenia
     public void Heal(int healPoints)
     {
         if (currentHealthPoints < maxHealthPoints)
@@ -75,7 +78,7 @@ public class Statistics : ScriptableObject
             Debug.Log("Max Health");
         }
     }
-
+    //Skrypt od ekspienia
     public void ExpUp(int expGain)
     {
         exp += expGain;
@@ -85,7 +88,7 @@ public class Statistics : ScriptableObject
             LevelUp();
         }
     }
-
+    //Skrypt od levelowania
     public void LevelUp()
     {
         if (exp >= lvlThreshold)
@@ -99,7 +102,7 @@ public class Statistics : ScriptableObject
             Debug.Log("Insufficient Experience");
         }
     }
-
+    //Skrypt œci¹gaj¹cy info nt. p³ci gracza do innych skryptów
     public int SexCheck()
     {
         int sexNumber = 0;
@@ -117,7 +120,7 @@ public class Statistics : ScriptableObject
         }
         return sexNumber;
     }
-
+    //Skrypt konwertuj¹cy numeryczne statystyki na arraya int na potrzebê innych skryptów
     public int[] StatGather()
     {
         int[] statChart = {strength, agility, dexterity, determination, intellect, perception };
