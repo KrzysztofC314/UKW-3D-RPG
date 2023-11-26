@@ -15,6 +15,20 @@ public class GameManager : MonoBehaviour
     public Button Player3;
     public Button Player4;
 
+    //---------------------------------------
+
+    public int Health = 10;
+    public int Energy = 10;
+
+    public int Class = 1;
+
+    public int Relation = 10;
+
+    public int Strength = 10;
+    public int Dexterity = 10;
+    public int Intellect = 10;
+    public int Charisma = 10;
+
     //Skrypt do zmieniania active playera w grze
     public void SetActivePlayerTo(int player)
     {
