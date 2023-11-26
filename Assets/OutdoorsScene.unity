@@ -2473,22 +2473,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.22754495
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9737676
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
@@ -2498,7 +2498,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -153.695
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
@@ -2921,22 +2921,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.32570255
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9454723
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
@@ -2946,7 +2946,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -141.984
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
@@ -3760,22 +3760,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.46352547
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8860836
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
@@ -3785,7 +3785,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -124.77
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
@@ -3810,7 +3810,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
       propertyPath: m_Name
-      value: Player_Model_3
+      value: Player_Model_4
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
@@ -4629,22 +4629,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.08390358
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9964739
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
@@ -4654,7 +4654,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -170.374
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
@@ -5467,6 +5467,14 @@ MonoBehaviour:
   Player2: {fileID: 1112441517}
   Player3: {fileID: 860274780}
   Player4: {fileID: 188342568}
+  Health: 10
+  Energy: 10
+  Class: 1
+  Relation: 10
+  Strength: 10
+  Dexterity: 10
+  Intellect: 10
+  Charisma: 10
 --- !u!114 &1307265797
 MonoBehaviour:
   m_ObjectHideFlags: 0
