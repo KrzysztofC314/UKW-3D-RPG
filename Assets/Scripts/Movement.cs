@@ -19,15 +19,11 @@ public class Movement : MonoBehaviour
     private bool isMenu;
     private bool isTeam;
     [SerializeField] private int placeInTeam;
-    private AnimController animController;
-    private Vector3 location;
-    private Vector3 destination;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animController = GetComponentInChildren<AnimController>();
 
 
         //Tu jest to od rozdzielania 
@@ -53,15 +49,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        location = transform.position;
-        if (location != destination)
-        {
-            animController.isWalking = false;
-        }
-        else
-        {
-            animController.isWalking= true;
-        }
         isDialogue = teamController.isDialogue;
         isMenu = gameManager.isMenu;
         isTeam = gameManager.isTeam;
@@ -88,8 +75,7 @@ public class Movement : MonoBehaviour
             {
                 if (hit.collider.CompareTag(groundTag))
                 {
-                    destination = hit.point;
-                    agent.SetDestination(destination);
+                    agent.SetDestination(hit.point);
                 }
             }
         }
@@ -108,19 +94,18 @@ public class Movement : MonoBehaviour
                     switch (placeInTeam)
                     {
                         case 1:
-                            destination = hit.point + new Vector3(stopDistance, 0, stopDistance);
+                            agent.SetDestination(hit.point + new Vector3(stopDistance, 0, stopDistance));
                             break;
                         case 2:
-                            destination = hit.point + new Vector3(-stopDistance, 0, stopDistance);
+                            agent.SetDestination(hit.point + new Vector3(-stopDistance, 0, stopDistance));
                             break;
                         case 3:
-                            destination = hit.point + new Vector3(stopDistance, 0, -stopDistance);
+                            agent.SetDestination(hit.point + new Vector3(stopDistance, 0, -stopDistance));
                             break;
                         case 4:
-                            destination = hit.point + new Vector3(-stopDistance, 0, -stopDistance);
+                            agent.SetDestination(hit.point + new Vector3(-stopDistance, 0, -stopDistance));
                             break;
                     }
-                    agent.SetDestination(destination);
                 }
             }
         }
