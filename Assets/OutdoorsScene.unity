@@ -2523,7 +2523,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
       propertyPath: m_Name
-      value: Model Text 01
+      value: Player_Model_1
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 0e1b086dfdbefa0479eedecc786d2902,
         type: 3}
@@ -2976,7 +2976,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
       propertyPath: m_Name
-      value: Model Text 03
+      value: Player_Model_3
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 5d2c0f5d97ab88e489ce9588f09c2c9a,
         type: 3}
@@ -3800,7 +3800,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
       propertyPath: m_Name
-      value: Model Test 04
+      value: Player_Model_3
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 4d63d384c00db4f419a7ecc5fad5a785,
         type: 3}
@@ -4658,7 +4658,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
       propertyPath: m_Name
-      value: Model Test 02
+      value: Player_Model_2
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: df63b654b63101e478ef323b35c952d8,
         type: 3}
