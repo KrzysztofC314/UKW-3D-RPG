@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2158.6924, g: 2263.3027, b: 3286.879, a: 1}
+  m_IndirectSpecularColor: {r: 2024.5889, g: 1991.2637, b: 2398.336, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -581,6 +581,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Okno
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38f592ff6b5dbcd4ea558bacb6aea101,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38f592ff6b5dbcd4ea558bacb6aea101,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38f592ff6b5dbcd4ea558bacb6aea101, type: 3}
@@ -1226,6 +1236,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Naroznik_Maly
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae69fbb355a20df478f4daf77c045394,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae69fbb355a20df478f4daf77c045394,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae69fbb355a20df478f4daf77c045394, type: 3}
 --- !u!1 &188342566
@@ -1786,6 +1806,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "Przej\u015Bcie_Du\u017Ce"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27453e28d1733224eb77a59391374bbb,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27453e28d1733224eb77a59391374bbb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27453e28d1733224eb77a59391374bbb, type: 3}
@@ -2669,6 +2699,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Naroznik
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c257443850c585b43a7f766febbd1406,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c257443850c585b43a7f766febbd1406,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c257443850c585b43a7f766febbd1406, type: 3}
 --- !u!1001 &512389303
@@ -2743,6 +2783,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_HalfWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e09aac8f6d1233244ae9d0229085bac1,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e09aac8f6d1233244ae9d0229085bac1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e09aac8f6d1233244ae9d0229085bac1, type: 3}
 --- !u!1001 &576752101
@@ -2816,6 +2866,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: half_stairs_modular
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fae614a62c8c82341b000a0c118fc02a,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fae614a62c8c82341b000a0c118fc02a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae614a62c8c82341b000a0c118fc02a, type: 3}
@@ -3022,6 +3082,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sciana_JednoStronna
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d646b40abf7bc744d82c30aeb4a1fcf3,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d646b40abf7bc744d82c30aeb4a1fcf3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d646b40abf7bc744d82c30aeb4a1fcf3, type: 3}
@@ -3410,6 +3480,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sciana_Dwustronna
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a465d498d354c848a76c6b8dbb8179f,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a465d498d354c848a76c6b8dbb8179f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a465d498d354c848a76c6b8dbb8179f, type: 3}
@@ -4269,6 +4349,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "Drzwi_Du\u017Ce"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9386f3086172a94ab226966770f99c4,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9386f3086172a94ab226966770f99c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9386f3086172a94ab226966770f99c4, type: 3}
@@ -5650,6 +5740,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_Corner_HalfWall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 703f8a8a65fe1f54da2746d7a5242273,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 703f8a8a65fe1f54da2746d7a5242273,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703f8a8a65fe1f54da2746d7a5242273, type: 3}
 --- !u!1 &1457790820
@@ -5787,6 +5887,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drzwi
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72780ce403726ea4cbc88f17a73a6cd4,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72780ce403726ea4cbc88f17a73a6cd4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72780ce403726ea4cbc88f17a73a6cd4, type: 3}
@@ -5996,6 +6106,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ffc73ba4a63f5dd4eb8372e0cd318941,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ffc73ba4a63f5dd4eb8372e0cd318941,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffc73ba4a63f5dd4eb8372e0cd318941, type: 3}
