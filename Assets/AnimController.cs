@@ -5,11 +5,23 @@ using UnityEngine;
 public class AnimController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [HideInInspector] public bool isWalking;
+    private bool isWalking;
+    private Movement movement;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+        
+    }
+    private void Awake()
+    {
+        movement = GetComponentInParent<Movement>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        isWalking = movement.isWalking;
         if (isWalking)
         {
             animator.SetBool("isWalking", true);

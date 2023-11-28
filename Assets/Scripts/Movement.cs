@@ -19,15 +19,14 @@ public class Movement : MonoBehaviour
     private bool isMenu;
     private bool isTeam;
     [SerializeField] private int placeInTeam;
-    private AnimController animController;
-    private Vector3 location;
+    public bool isWalking;
     private Vector3 destination;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animController = GetComponentInChildren<AnimController>();
 
 
         //Tu jest to od rozdzielania 
@@ -53,14 +52,14 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        location = transform.position;
-        if (location != destination)
+        speed = GetComponent<NavMeshAgent>().velocity.magnitude;
+        if (speed >= 0.1)
         {
-            animController.isWalking = false;
+            isWalking = true;
         }
         else
         {
-            animController.isWalking= true;
+            isWalking = false;
         }
         isDialogue = teamController.isDialogue;
         isMenu = gameManager.isMenu;
