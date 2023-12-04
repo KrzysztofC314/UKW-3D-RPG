@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public int ActivePlayer = 1;
     public bool isTeam = true;
     public bool isPause = false;
+    public bool isFight = false;
+    public int Action = 1;
+
+    public KeyCode PauseButton = KeyCode.Space;
 
     public Button Player1;
     public Button Player2;
@@ -40,5 +44,12 @@ public class GameManager : MonoBehaviour
         isTeam = !isTeam;
     }
 
-   
+    private void Update()
+    {
+        if (Input.GetKeyDown(PauseButton))
+        {
+            isPause = !isPause; // Zmiana wartoœci boola isPause na przeciwn¹ wartoœæ po wciœniêciu klawisza
+        }
+    }
+
 }
