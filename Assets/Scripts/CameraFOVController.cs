@@ -10,6 +10,14 @@ public class CameraFOVController : MonoBehaviour
     {
         // Pobranie z kó³ka myszy
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            scrollInput--;
+        }
+        else if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            scrollInput++;
+        }
 
         float newFOV = Camera.main.fieldOfView - (scrollInput * zoomSpeed);
 
