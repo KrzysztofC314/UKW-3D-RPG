@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2157.7236, g: 2262.295, b: 3285.9766, a: 1}
+  m_IndirectSpecularColor: {r: 2160.8467, g: 2265.0645, b: 3288.3984, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7224,7 +7224,7 @@ GameObject:
   - component: {fileID: 1821925308}
   - component: {fileID: 1821925307}
   - component: {fileID: 1821925306}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
