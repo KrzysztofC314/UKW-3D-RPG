@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isPause = false;
     public bool isFight = false;
     public int Action = 1;
+    public int Turn = 1;
 
     public KeyCode PauseButton = KeyCode.Space;
 
@@ -20,18 +21,18 @@ public class GameManager : MonoBehaviour
     public Button Player4;
 
     //---------------------------------------
+    /*
+    public int MaxHealth;
+    public int Health;
+    public int MaxEnergy;
+    public int Energy;
 
-    public int Health = 10;
-    public int Energy = 10;
+    public int Strength;
+    public int Dexterity;
+    public int Intellect;
+    public int Charisma;
+    */
 
-    public int Class = 1;
-
-    public int Relation = 10;
-
-    public int Strength = 10;
-    public int Dexterity = 10;
-    public int Intellect = 10;
-    public int Charisma = 10;
 
     //Skrypt do zmieniania active playera w grze
     public void SetActivePlayerTo(int player)
