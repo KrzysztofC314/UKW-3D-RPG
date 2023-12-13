@@ -40,5 +40,18 @@ public class CharacterSheet : MonoBehaviour
     {
         HP.text = "HP: " + Health + "/" + MaxHealth;
         EP.text = "EP: " + Energy + "/" + MaxEnergy;
+
+        if (!gameManager.isFight)
+        {
+            Energy = MaxEnergy;
+        }
+        if (Energy <= 0)
+        {
+            Energy = 0;
+        }
+        if (Health <= 0)
+        {
+            Health = 0;
+        }
     }
 }
