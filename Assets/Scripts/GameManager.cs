@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Button Player4;
 
     [SerializeField] private Button NextTurn;
+    private TurnManager turnManager;
 
     //---------------------------------------
     /*
@@ -43,9 +44,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        turnManager = GetComponent<TurnManager>();
         if (NextTurn != null)
         {
             NextTurn.onClick.AddListener(OnClickNextTurn);
+        }
+    }
+    private void Update()
+    {
+        if (Turn > turnManager.turnAmount)
+        {
+            Turn = 1;
         }
     }
     //Skrypt do zmieniania active playera w grze
@@ -60,8 +69,9 @@ public class GameManager : MonoBehaviour
         isTeam = !isTeam;
     }
 
-    void OnClickNextTurn()
+    public void OnClickNextTurn()
     {
         Turn++;
+        
     }
 }

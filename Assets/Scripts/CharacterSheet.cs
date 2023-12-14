@@ -28,6 +28,7 @@ public class CharacterSheet : MonoBehaviour
 
     [SerializeField] private TMP_Text HP;
     [SerializeField] private TMP_Text EP;
+    [SerializeField] private bool isBot;
 
     private int Turn;
 
@@ -68,6 +69,10 @@ public class CharacterSheet : MonoBehaviour
         if (gameManager.isFight == true && Turn != PlayerTurn)
         {
             FightAction = MaxFightAction;
+        }
+        if (gameManager.isFight == true && Turn == PlayerTurn && isBot)
+        {
+            gameManager.OnClickNextTurn();
         }
     }
 }

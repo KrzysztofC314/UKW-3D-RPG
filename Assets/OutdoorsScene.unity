@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2157.4395, g: 2262.2578, b: 3286.3984, a: 1}
+  m_IndirectSpecularColor: {r: 2158.4834, g: 2263.1328, b: 3286.6133, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -937,6 +937,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 766087435}
   EP: {fileID: 1747265420}
+  isBot: 0
 --- !u!114 &140696804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5458,6 +5459,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 266233378}
   EP: {fileID: 1855882021}
+  isBot: 0
 --- !u!114 &845930909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5932,6 +5934,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 0}
   EP: {fileID: 0}
+  isBot: 0
 --- !u!136 &921953427
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7120,6 +7123,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 1486096966}
   EP: {fileID: 1082875197}
+  isBot: 0
 --- !u!114 &1260012396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7410,6 +7414,7 @@ GameObject:
   - component: {fileID: 1307265798}
   - component: {fileID: 1307265799}
   - component: {fileID: 1307265800}
+  - component: {fileID: 1307265801}
   m_Layer: 0
   m_Name: WszechKot
   m_TagString: Untagged
@@ -7524,6 +7529,25 @@ MonoBehaviour:
     ActionTo: 1
   - ActionButton: {fileID: 1766803725}
     ActionTo: 2
+--- !u!114 &1307265801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307265794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fcf5ff90342abe4bac04bd581e14d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startFight:
+    m_PersistentCalls:
+      m_Calls: []
+  NextTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  turnAmount: 0
 --- !u!1 &1331673708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7741,7 +7765,7 @@ MonoBehaviour:
   Health: 10
   MaxEnergy: 7
   Energy: 7
-  Initiative: 10
+  Initiative: 9
   MaxFightAction: 1
   FightAction: 1
   Allience: 0
@@ -7753,6 +7777,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 793176120}
   EP: {fileID: 236466258}
+  isBot: 0
 --- !u!114 &1406622218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9159,6 +9184,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 0}
   EP: {fileID: 0}
+  isBot: 0
 --- !u!114 &1821925312
 MonoBehaviour:
   m_ObjectHideFlags: 0
