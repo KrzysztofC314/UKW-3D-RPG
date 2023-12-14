@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour
     private float speed;
 
     private bool isFight;
+    private int Energy;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,8 @@ public class Movement : MonoBehaviour
     {
         isFight = gameManager.isFight;
         speed = GetComponent<NavMeshAgent>().velocity.magnitude;
+        Energy = characterSheet.Energy;
+
         if (speed >= 0.1)
         {
             isWalking = true;

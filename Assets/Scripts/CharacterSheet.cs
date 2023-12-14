@@ -27,7 +27,7 @@ public class CharacterSheet : MonoBehaviour
     [SerializeField] private TMP_Text HP;
     [SerializeField] private TMP_Text EP;
 
-
+    private int Turn;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,7 @@ public class CharacterSheet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Turn = gameManager.Turn;
         HP.text = "HP: " + Health + "/" + MaxHealth;
         EP.text = "EP: " + Energy + "/" + MaxEnergy;
 
@@ -52,6 +53,10 @@ public class CharacterSheet : MonoBehaviour
         if (Health <= 0)
         {
             Health = 0;
+        }
+        if (gameManager.isFight == true && Turn != PlayerTurn)
+        {
+            Energy = MaxEnergy;
         }
     }
 }
