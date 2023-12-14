@@ -6,7 +6,9 @@ public class AnimController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     private bool isWalking;
+    private bool isAttack;
     private Movement movement;
+
 
     private void Start()
     {
@@ -22,6 +24,9 @@ public class AnimController : MonoBehaviour
     void Update()
     {
         isWalking = movement.isWalking;
+        isAttack = movement.isAttack;
+
+
         if (isWalking)
         {
             animator.SetBool("isWalking", true);
@@ -30,5 +35,15 @@ public class AnimController : MonoBehaviour
         {
             animator.SetBool("isWalking", false);
         }
+
+        if (isAttack)
+        {
+            animator.SetBool("isAttack", true);
+        }
+        else
+        {
+            animator.SetBool("isAttack", false);
+        }
+
     }
 }
