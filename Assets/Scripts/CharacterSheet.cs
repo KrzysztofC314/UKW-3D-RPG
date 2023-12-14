@@ -14,6 +14,8 @@ public class CharacterSheet : MonoBehaviour
     public int Energy = 10;
 
     public int Initiative = 10;
+    public int MaxFightAction = 1;
+    public int FightAction = 1;
     public int Allience = 1;
     public int PlayerTurn = 1;
 
@@ -57,6 +59,15 @@ public class CharacterSheet : MonoBehaviour
         if (gameManager.isFight == true && Turn != PlayerTurn)
         {
             Energy = MaxEnergy;
+        }
+
+        if (!gameManager.isFight)
+        {
+            FightAction = MaxFightAction;
+        }
+        if (gameManager.isFight == true && Turn != PlayerTurn)
+        {
+            FightAction = MaxFightAction;
         }
     }
 }

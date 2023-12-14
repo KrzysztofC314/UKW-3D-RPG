@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Movement : MonoBehaviour
 {
@@ -22,8 +23,13 @@ public class Movement : MonoBehaviour
     private Vector3 destination;
     private float speed;
 
+    [SerializeField] private TMP_Text EPCost;
+
     private bool isFight;
-    private int Energy;
+    private int moveCost;
+    private bool isCostGreaterThanEnergy;
+    private int energyCost;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +62,8 @@ public class Movement : MonoBehaviour
     {
         isFight = gameManager.isFight;
         speed = GetComponent<NavMeshAgent>().velocity.magnitude;
-        Energy = characterSheet.Energy;
+        //characterSheet.Energy;
+        EPCost.enabled = isFight;
 
         if (speed >= 0.1)
         {
@@ -73,17 +80,36 @@ public class Movement : MonoBehaviour
                 if (gameManager.isTeam == false && gameManager.ActivePlayer == placeInTeam && isFight == false)
                 {
                     ChosenPlayerMovement();
-                isAttack = false;
+                //isAttack = false;
                 }
                 else if (gameManager.isTeam == true && isFight == false)
                 {
                     FollowPlayerMovement();
-                isAttack = false;
+                //isAttack = false;
             }
             else if (gameManager.Turn == characterSheet.PlayerTurn && isFight == true && gameManager.Action == 1)
             {
                 FightPlayerMovement();
-                isAttack = false;
+                //isAttack = false;
+
+                if (!IsPointerOverUI())
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                    if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+                    {
+                        if (hit.collider.CompareTag(groundTag))
+                        {
+                            Vector3 currentMousePosition = hit.point;
+
+                            // Obliczamy odleg³oœæ miêdzy aktualn¹ pozycj¹ myszy a pozycj¹ postaci
+                            float distance = Vector3.Distance(transform.position, currentMousePosition);
+                            int energyCost = Mathf.CeilToInt(distance); // Zaokr¹glamy do góry
+
+                            UpdateEPCostText(energyCost); // Aktualizujemy tekst z kosztem energii
+                        }
+                    }
+                }
             }
             else if (gameManager.Turn == characterSheet.PlayerTurn && isFight == true && gameManager.Action == 2)
             {
@@ -139,6 +165,8 @@ public class Movement : MonoBehaviour
             }
         }
     }
+
+    /* tu to jest stare - NIE DOTYKAÆ!!!
     private void FightPlayerMovement() // poruszanie postaci w stanie walki 
     {
         if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
@@ -155,11 +183,61 @@ public class Movement : MonoBehaviour
             }
         }
     }
+    */
+
+    private void FightPlayerMovement() // poruszanie postaci w stanie walki 
+    {
+        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+            {
+                if (hit.collider.CompareTag(groundTag))
+                {
+                    Vector3 previousDestination = agent.destination; // zapisujemy poprzedni¹ pozycjê
+                    agent.SetDestination(hit.point);
+
+                    // obliczamy odleg³oœæ miêdzy poprzedni¹ a now¹ pozycj¹
+                    float distance = Vector3.Distance(previousDestination, hit.point);
+                    int energyCost = Mathf.CeilToInt(distance); //zaokr¹glamy do góry
+
+                    // sprawdzamy, czy mamy wystarczaj¹c¹ iloœæ energii przed ruchem
+                    if (characterSheet.Energy >= energyCost)
+                    {
+                        characterSheet.Energy -= energyCost; // odejmujemy zu¿yt¹ energiê
+                        UpdateEPCostText(energyCost); //aktualizujemy tekst z kosztem energii
+                    }
+                    else
+                    {
+                        // Jeœli nie mamy wystarczaj¹cej iloœci energii, anulujemy ruch.
+                        agent.ResetPath(); // resetujemy trase aby postaæ nie ruszy³a siê do celu
+                        Debug.Log("Niewystarczaj¹ca iloœæ energii!");
+                    }
+                }
+            }
+        }
+    }
+
+    private void UpdateEPCostText(int cost) //updatujemy koszt ruchu w tekœcie
+    {
+        if (cost > characterSheet.Energy)
+        {
+            EPCost.color = Color.red; // Ustawienie koloru tekstu na czerwony, jeœli koszt jest wiêkszy od energii
+        }
+        else
+        {
+            EPCost.color = new Color(0.53f, 0.81f, 0.98f); // Ustawienie jaœniejszego niebieskiego koloru tekstu
+        }
+        EPCost.text = $"Energy Cost: {cost}";
+    }
 
     public void FightPlayerAttack()
     {
+        if(characterSheet.FightAction > 0 && Input.GetMouseButtonDown(0) && !IsPointerOverUI())
+        {
 
-
+        }
     }
 
 
