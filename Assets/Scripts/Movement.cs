@@ -30,6 +30,9 @@ public class Movement : MonoBehaviour
     private bool isCostGreaterThanEnergy;
     private int energyCost;
 
+    private float attackRange = 25f; // Zasiêg ataku
+    private int damage = 30;
+
 
     // Start is called before the first frame update
     void Start()
@@ -110,10 +113,6 @@ public class Movement : MonoBehaviour
                         }
                     }
                 }
-            }
-            else if (gameManager.Turn == characterSheet.PlayerTurn && isFight == true && gameManager.Action == 2)
-            {
-                FightPlayerAttack();
             }
         }
     }
@@ -230,14 +229,6 @@ public class Movement : MonoBehaviour
             EPCost.color = new Color(0.53f, 0.81f, 0.98f); // Ustawienie jaœniejszego niebieskiego koloru tekstu
         }
         EPCost.text = $"Energy Cost: {cost}";
-    }
-
-    public void FightPlayerAttack()
-    {
-        if(characterSheet.FightAction > 0 && Input.GetMouseButtonDown(0) && !IsPointerOverUI())
-        {
-
-        }
     }
 
 

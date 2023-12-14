@@ -1,5 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +26,8 @@ public class GameManager : MonoBehaviour
     public Button Player3;
     public Button Player4;
 
+    [SerializeField] private Button NextTurn;
+
     //---------------------------------------
     /*
     public int MaxHealth;
@@ -33,24 +41,27 @@ public class GameManager : MonoBehaviour
     public int Charisma;
     */
 
-
+    void Start()
+    {
+        if (NextTurn != null)
+        {
+            NextTurn.onClick.AddListener(OnClickNextTurn);
+        }
+    }
     //Skrypt do zmieniania active playera w grze
     public void SetActivePlayerTo(int player)
     {
         ActivePlayer = player;
     }
+
     //Skrypt do zmieniania boola isTeam w grze
     public void SwitchTeamstate()
     {
         isTeam = !isTeam;
     }
 
-    private void Update()
+    void OnClickNextTurn()
     {
-        if (Input.GetKeyDown(PauseButton))
-        {
-            isPause = !isPause; // Zmiana wartoœci boola isPause na przeciwn¹ wartoœæ po wciœniêciu klawisza
-        }
+        Turn++;
     }
-
 }
