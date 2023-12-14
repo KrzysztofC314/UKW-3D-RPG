@@ -50,7 +50,12 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (gameManager.isFight && characterSheet.PlayerTurn == gameManager.Turn)
+        if (gameManager.isFight == false || characterSheet.PlayerTurn != gameManager.Turn)
+        {
+            CurrentSpeed = MaxSpeed;
+            AttackPoints = MaxAttackPoints;
+        }
+            if (gameManager.isFight && characterSheet.PlayerTurn == gameManager.Turn)
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
             Transform nearestPlayer = null;
