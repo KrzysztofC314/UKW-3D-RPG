@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour
 
     private float attackRange = 25f; // Zasiêg ataku
     private int damage = 30;
+    public bool isDead;
 
 
     // Start is called before the first frame update
@@ -77,39 +78,51 @@ public class Movement : MonoBehaviour
             isWalking = false;
         }
 
-        if (gameManager.isDialog == false && gameManager.isMenu == false && gameManager.Action == 1)
+        if (characterSheet.Health == 0)
         {
+            isDead = true;
+            Destroy(gameObject);
+        }
+        if (characterSheet.Health > 0)
+        {
+            isDead = false;
+        }
 
+        if (isDead == false)
+        {
+            if (gameManager.isDialog == false && gameManager.isMenu == false && gameManager.Action == 1)
+            {
                 if (gameManager.isTeam == false && gameManager.ActivePlayer == placeInTeam && isFight == false)
                 {
                     ChosenPlayerMovement();
-                //isAttack = false;
+                    //isAttack = false;
                 }
                 else if (gameManager.isTeam == true && isFight == false)
                 {
                     FollowPlayerMovement();
-                //isAttack = false;
-            }
-            else if (gameManager.Turn == characterSheet.PlayerTurn && isFight == true && gameManager.Action == 1)
-            {
-                FightPlayerMovement();
-                //isAttack = false;
-
-                if (!IsPointerOverUI())
+                    //isAttack = false;
+                }
+                else if (gameManager.Turn == characterSheet.PlayerTurn && isFight == true && gameManager.Action == 1)
                 {
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    FightPlayerMovement();
+                    //isAttack = false;
 
-                    if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+                    if (!IsPointerOverUI())
                     {
-                        if (hit.collider.CompareTag(groundTag))
+                        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
                         {
-                            Vector3 currentMousePosition = hit.point;
+                            if (hit.collider.CompareTag(groundTag))
+                            {
+                                Vector3 currentMousePosition = hit.point;
 
-                            // Obliczamy odleg³oœæ miêdzy aktualn¹ pozycj¹ myszy a pozycj¹ postaci
-                            float distance = Vector3.Distance(transform.position, currentMousePosition);
-                            int energyCost = Mathf.CeilToInt(distance); // Zaokr¹glamy do góry
+                                // Obliczamy odleg³oœæ miêdzy aktualn¹ pozycj¹ myszy a pozycj¹ postaci
+                                float distance = Vector3.Distance(transform.position, currentMousePosition);
+                                int energyCost = Mathf.CeilToInt(distance); // Zaokr¹glamy do góry
 
-                            UpdateEPCostText(energyCost); // Aktualizujemy tekst z kosztem energii
+                                UpdateEPCostText(energyCost); // Aktualizujemy tekst z kosztem energii
+                            }
                         }
                     }
                 }
@@ -235,5 +248,20 @@ public class Movement : MonoBehaviour
     private bool IsPointerOverUI() //sprawdza czy myszka jest na ui
     {
         return EventSystem.current.IsPointerOverGameObject();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        characterSheet.Health -= damage;
+
+        // Dodaj logikê reakcji na otrzymane obra¿enia, np. sprawdzenie czy gracz nie umar³
+        if (characterSheet.Health <= 0)
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
