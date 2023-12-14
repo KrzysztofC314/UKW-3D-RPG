@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2160.1475, g: 2266.3418, b: 3295.6055, a: 1}
+  m_IndirectSpecularColor: {r: 2160.1514, g: 2266.3496, b: 3295.5273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -938,6 +938,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 766087435}
   EP: {fileID: 1747265420}
+  isBot: 0
 --- !u!114 &140696804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5460,6 +5461,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 266233378}
   EP: {fileID: 1855882021}
+  isBot: 0
 --- !u!114 &845930909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5928,7 +5930,7 @@ MonoBehaviour:
   Health: 10
   MaxEnergy: 10
   Energy: 10
-  Initiative: 3
+  Initiative: 5
   MaxFightAction: 1
   FightAction: 1
   Allience: 1
@@ -5940,6 +5942,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 0}
   EP: {fileID: 0}
+  isBot: 1
 --- !u!136 &921953427
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7151,6 +7154,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 1486096966}
   EP: {fileID: 1082875197}
+  isBot: 0
 --- !u!114 &1260012396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7441,6 +7445,7 @@ GameObject:
   - component: {fileID: 1307265798}
   - component: {fileID: 1307265799}
   - component: {fileID: 1307265800}
+  - component: {fileID: 1307265801}
   m_Layer: 0
   m_Name: WszechKot
   m_TagString: Untagged
@@ -7481,7 +7486,7 @@ MonoBehaviour:
   ActivePlayer: 1
   isTeam: 1
   isPause: 0
-  isFight: 1
+  isFight: 0
   Action: 1
   Turn: 1
   PauseButton: 32
@@ -7555,6 +7560,25 @@ MonoBehaviour:
     ActionTo: 1
   - ActionButton: {fileID: 1766803725}
     ActionTo: 2
+--- !u!114 &1307265801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307265794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fcf5ff90342abe4bac04bd581e14d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startFight:
+    m_PersistentCalls:
+      m_Calls: []
+  NextTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  turnAmount: 0
 --- !u!1 &1331673708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7785,6 +7809,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 793176120}
   EP: {fileID: 236466258}
+  isBot: 0
 --- !u!114 &1406622218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9180,7 +9205,7 @@ MonoBehaviour:
   Health: 10
   MaxEnergy: 10
   Energy: 10
-  Initiative: 3
+  Initiative: 4
   MaxFightAction: 1
   FightAction: 1
   Allience: 1
@@ -9192,6 +9217,7 @@ MonoBehaviour:
   Charisma: 10
   HP: {fileID: 0}
   EP: {fileID: 0}
+  isBot: 1
 --- !u!114 &1821925312
 MonoBehaviour:
   m_ObjectHideFlags: 0
