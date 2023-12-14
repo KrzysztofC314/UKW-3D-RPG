@@ -55,6 +55,7 @@ public class EnemyController : MonoBehaviour
             CurrentSpeed = MaxSpeed;
             AttackPoints = MaxAttackPoints;
         }
+
             if (gameManager.isFight && characterSheet.PlayerTurn == gameManager.Turn)
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
