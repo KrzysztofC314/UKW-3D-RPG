@@ -253,8 +253,6 @@ public class Movement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         characterSheet.Health -= damage;
-
-        // Dodaj logikê reakcji na otrzymane obra¿enia, np. sprawdzenie czy gracz nie umar³
         if (characterSheet.Health <= 0)
         {
             Die();

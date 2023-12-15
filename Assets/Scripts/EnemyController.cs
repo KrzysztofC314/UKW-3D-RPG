@@ -10,12 +10,15 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     private bool isDead = false;
     [SerializeField] private int MaxMoveDistance = 10;
-    private int MoveDistance;
+    public int MoveDistance;
     [SerializeField] private int MaxAttackPoints = 1;
-    private int AttackPoints;
-    [SerializeField] private int Damage = 3;
-    [SerializeField] private int AttackRange = 25;
-    private bool IsInRange = false;
+    public int AttackPoints;
+    [SerializeField] public int Damage = 3;
+    [SerializeField] public int AttackRange = 25;
+    public bool IsInRange = false;
+    private string playerTag = "Player";
+    public bool isAttack = false;
+
 
     private NavMeshAgent agent;
 
@@ -56,15 +59,43 @@ public class EnemyController : MonoBehaviour
             AttackPoints = MaxAttackPoints;
         }
 
+        //-------------------------------
+        GameObject[] players = GameObject.FindGameObjectsWithTag(playerTag);
+
+        // Domyœlnie ustaw IsInRange na false
+        IsInRange = false;
+
+        // Dla ka¿dego znalezionego obiektu "Player"
+        foreach (GameObject player in players)
+        {
+            // Oblicz odleg³oœæ miêdzy obiektem a graczem
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+
+            // Jeœli odleg³oœæ jest mniejsza ni¿ AttackRange, ustaw IsInRange na true
+            if (distance < AttackRange)
+            {
+                IsInRange = true;
+            }
+        }
+        //---------------------------------------
+
         if (gameManager.isFight && characterSheet.PlayerTurn == gameManager.Turn)
         {
-           if (IsInRange == true)
+            if (IsInRange == true)
             {
-                Attack();
+                isAttack = true;
             }
-           if (IsInRange == true)
+            if (IsInRange == false && MoveDistance > 0)
             {
                 Moving();
+            }
+            if (AttackPoints == 0)
+            {
+                gameManager.Turn++;
+            }
+            if (MoveDistance == 0 && IsInRange == false)
+            {
+                gameManager.Turn++;
             }
         }
     }
@@ -73,10 +104,4 @@ public class EnemyController : MonoBehaviour
     {
 
     }
-
-    void Attack()
-    {
-
-    }
 }
-
