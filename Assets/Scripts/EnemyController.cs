@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private int AttackPoints;
     [SerializeField] private int Damage = 3;
     [SerializeField] private int AttackRange = 25;
+    private bool IsInRange = false;
 
     private NavMeshAgent agent;
 
@@ -57,7 +58,14 @@ public class EnemyController : MonoBehaviour
 
         if (gameManager.isFight && characterSheet.PlayerTurn == gameManager.Turn)
         {
-           
+           if (IsInRange == true)
+            {
+                Attack();
+            }
+           if (IsInRange == true)
+            {
+                Moving();
+            }
         }
     }
 
