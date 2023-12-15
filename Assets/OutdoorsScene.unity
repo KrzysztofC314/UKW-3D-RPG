@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2734.9941, g: 2571.9258, b: 3303.461, a: 1}
+  m_IndirectSpecularColor: {r: 2734.9473, g: 2571.5664, b: 3303.0547, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17497,6 +17497,7 @@ GameObject:
   - component: {fileID: 1307265799}
   - component: {fileID: 1307265800}
   - component: {fileID: 1307265801}
+  - component: {fileID: 1307265802}
   m_Layer: 0
   m_Name: WszechKot
   m_TagString: Untagged
@@ -17537,7 +17538,7 @@ MonoBehaviour:
   ActivePlayer: 1
   isTeam: 1
   isPause: 0
-  isFight: 0
+  isFight: 1
   Action: 1
   Turn: 1
   PauseButton: 32
@@ -17630,6 +17631,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   turnAmount: 0
+--- !u!114 &1307265802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307265794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6eef8259eff5674f9912c06375a69ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1307265796}
 --- !u!1001 &1308640850
 PrefabInstance:
   m_ObjectHideFlags: 0

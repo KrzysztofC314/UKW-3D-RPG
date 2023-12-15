@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+
+
         if (Turn > turnManager.turnAmount)
         {
             Turn = 1;
