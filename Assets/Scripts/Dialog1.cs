@@ -114,7 +114,7 @@ public class Dialog1 : MonoBehaviour
         }
 
         // wywo³ywanie private void
-        if (gameManager.Language == 0)
+        if (gameManager.Language == 0 && gameManager.isFight == false)
         {
             if (DialogStage == 1)
             {
@@ -126,7 +126,7 @@ public class Dialog1 : MonoBehaviour
             }
         }
 
-        if (gameManager.Language == 1)
+        if (gameManager.Language == 1 && gameManager.isFight == false)
         {
             if (DialogStage == 1)
             {
