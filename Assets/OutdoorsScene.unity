@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2738.7812, g: 2574.5273, b: 3304.7422, a: 1}
+  m_IndirectSpecularColor: {r: 2737.7266, g: 2578.1719, b: 3320.461, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9171,6 +9171,7 @@ MonoBehaviour:
   DialogStage: 0
   dialogActivated: 0
   teamController: {fileID: 679031948}
+  DialogNumber: 1
 --- !u!136 &642998619
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17541,6 +17542,7 @@ MonoBehaviour:
   isFight: 0
   Action: 1
   Turn: 1
+  CurrentDialog: 0
   PauseButton: 32
   Player1: {fileID: 751013244}
   Player2: {fileID: 1112441517}
@@ -21463,6 +21465,7 @@ MonoBehaviour:
   DialogStage: 0
   dialogActivated: 0
   teamController: {fileID: 679031948}
+  DialogNumber: 2
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0

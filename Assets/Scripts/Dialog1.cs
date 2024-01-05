@@ -5,18 +5,20 @@ using TMPro;
 public class Dialog1 : MonoBehaviour
 {
     private string playerTag = "Player";  // Tag gracza
-    public float activationDistance = 3.0f;  // Minimalna odleg³oœæ do aktywacji dialogu
-    public TMP_Text dialogText;
-    public Button[] answerButtons;
-    public GameManager gameManager;
-    public FlagManager FlagManager;
+    [SerializeField] private float activationDistance = 3.0f;  // Minimalna odleg³oœæ do aktywacji dialogu
+    [SerializeField] private TMP_Text dialogText;
+    [SerializeField] private Button[] answerButtons;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private FlagManager FlagManager;
 
-    public QuestManager quest; // pierwsza opcja dialogowa po klikniêciu aktywuje quest1 = true
+    [SerializeField] private QuestManager quest; // pierwsza opcja dialogowa po klikniêciu aktywuje quest1 = true
 
-    public float DialogDelay = 0;
-    public int DialogStage = 0;
-    public bool dialogActivated = false;
+    [SerializeField] private float DialogDelay = 0;
+    [SerializeField] private int DialogStage = 0;
+    [SerializeField] private bool dialogActivated = false;
     [SerializeField] private TeamController teamController;
+
+    [SerializeField] private int DialogNumber;
 
     private bool D1 = true;
     private bool D2 = true;
@@ -113,28 +115,31 @@ public class Dialog1 : MonoBehaviour
             }
         }
 
-        // wywo³ywanie private void
-        if (gameManager.Language == 0 && gameManager.isFight == false)
+        if (gameManager.CurrentDialog == DialogNumber)
         {
-            if (DialogStage == 1)
+            // wywo³ywanie private void
+            if (gameManager.Language == 0 && gameManager.isFight == false)
             {
-                Stage1();
+                if (DialogStage == 1)
+                {
+                    Stage1();
+                }
+                if (DialogStage == 2)
+                {
+                    Stage2();
+                }
             }
-            if (DialogStage == 2)
-            {
-                Stage2();
-            }
-        }
 
-        if (gameManager.Language == 1 && gameManager.isFight == false)
-        {
-            if (DialogStage == 1)
+            if (gameManager.Language == 1 && gameManager.isFight == false)
             {
-                Stage01();
-            }
-            if (DialogStage == 2)
-            {
-                Stage02();
+                if (DialogStage == 1)
+                {
+                    Stage01();
+                }
+                if (DialogStage == 2)
+                {
+                    Stage02();
+                }
             }
         }
     }

@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public int Action = 1;
     public int Turn = 1;
 
+    public int CurrentDialog = 0;
+
     public KeyCode PauseButton = KeyCode.Space;
 
     public Button Player1;
