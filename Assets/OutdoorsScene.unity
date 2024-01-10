@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2737.7266, g: 2578.1719, b: 3320.461, a: 1}
+  m_IndirectSpecularColor: {r: 2736.3418, g: 2574.3047, b: 3310.0469, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9137,7 +9137,6 @@ GameObject:
   - component: {fileID: 642998621}
   - component: {fileID: 642998620}
   - component: {fileID: 642998619}
-  - component: {fileID: 642998618}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -9145,33 +9144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &642998618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642998617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d262a8f7ada89b49838a3268a43cfb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationDistance: 5
-  dialogText: {fileID: 294260992}
-  answerButtons:
-  - {fileID: 695271211}
-  - {fileID: 88495389}
-  - {fileID: 407425448}
-  - {fileID: 1297754252}
-  gameManager: {fileID: 1307265796}
-  FlagManager: {fileID: 1307265797}
-  quest: {fileID: 1307265798}
-  DialogDelay: 0
-  DialogStage: 0
-  dialogActivated: 0
-  teamController: {fileID: 679031948}
-  DialogNumber: 1
 --- !u!136 &642998619
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21260,7 +21232,6 @@ GameObject:
   - component: {fileID: 1821925309}
   - component: {fileID: 1821925308}
   - component: {fileID: 1821925307}
-  - component: {fileID: 1821925311}
   - component: {fileID: 1821925312}
   - component: {fileID: 1821925313}
   - component: {fileID: 1821925314}
@@ -21351,36 +21322,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1821925311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821925305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 320234c003e280e449755ef3664f4412, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1307265796}
-  MaxHealth: 10
-  Health: 10
-  MaxEnergy: 10
-  Energy: 10
-  Initiative: 4
-  MaxFightAction: 1
-  FightAction: 1
-  Allience: 1
-  PlayerTurn: 5
-  Level: 1
-  Strength: 10
-  Dexterity: 10
-  Intellect: 10
-  Charisma: 10
-  HP: {fileID: 0}
-  EP: {fileID: 0}
-  isBot: 1
 --- !u!114 &1821925312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21394,7 +21335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  characterSheet: {fileID: 1821925311}
+  characterSheet: {fileID: 0}
   gameManager: {fileID: 1307265796}
   MaxMoveDistance: 10
   MoveDistance: 0
