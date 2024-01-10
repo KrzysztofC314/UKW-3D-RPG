@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2736.3418, g: 2574.3047, b: 3310.0469, a: 1}
+  m_IndirectSpecularColor: {r: 2735.2266, g: 2572.211, b: 3304.6016, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21235,7 +21235,6 @@ GameObject:
   - component: {fileID: 1821925312}
   - component: {fileID: 1821925313}
   - component: {fileID: 1821925314}
-  - component: {fileID: 1821925315}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -21380,33 +21379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyController: {fileID: 1821925312}
---- !u!114 &1821925315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821925305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ae810cb96f88154786406d835e42e30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationDistance: 5
-  dialogText: {fileID: 294260992}
-  answerButtons:
-  - {fileID: 695271211}
-  - {fileID: 88495389}
-  - {fileID: 407425448}
-  - {fileID: 1297754252}
-  gameManager: {fileID: 1307265796}
-  FlagManager: {fileID: 1307265797}
-  quest: {fileID: 1307265798}
-  DialogDelay: 0
-  DialogStage: 0
-  dialogActivated: 0
-  teamController: {fileID: 679031948}
-  DialogNumber: 2
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
