@@ -11,6 +11,7 @@ public class TurnManager : MonoBehaviour
     public UnityEvent NextTurn;
     private GameManager gameManager;
     private CharacterSheet[] characterSheets;
+    [HideInInspector] public bool[] isBot;
     public int turnAmount;
 
     
@@ -24,11 +25,12 @@ public class TurnManager : MonoBehaviour
         if (gameManager.isFight)
         {
             SortByInitiative();
+            IsBot();
             startFight.Invoke();
         }
     }
 
-    private void SortByInitiative()
+    public void SortByInitiative()
     {
         characterSheets = FindObjectsByType<CharacterSheet>(FindObjectsSortMode.None);
         Array.Sort(characterSheets, (a, b) => b.Initiative.CompareTo(a.Initiative));
@@ -36,6 +38,15 @@ public class TurnManager : MonoBehaviour
         for(int i = 0; i < characterSheets.Length; i++)
         {
             characterSheets[i].PlayerTurn = i + 1;
+        }
+
+    }
+
+    public void IsBot()
+    {
+        for (int i = 0; i < characterSheets.Length; i++)
+        {
+            isBot[i] = characterSheets[i].isBot;
         }
 
     }

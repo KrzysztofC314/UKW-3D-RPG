@@ -28,7 +28,7 @@ public class CharacterSheet : MonoBehaviour
 
     [SerializeField] private TMP_Text HP;
     [SerializeField] private TMP_Text EP;
-    [SerializeField] private bool isBot;
+    public bool isBot;
 
     private int Turn;
 
@@ -56,6 +56,7 @@ public class CharacterSheet : MonoBehaviour
         if (Health <= 0)
         {
             Health = 0;
+            this.enabled = false;
         }
         if (gameManager.isFight == true && Turn != PlayerTurn)
         {
