@@ -8,6 +8,7 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] private bool isInRange = false;
     [SerializeField] private bool isWaiting = false;
     [SerializeField] private int SceneNumber;
+    [SerializeField] private GameManager gameManager;
 
     void Update()
     {
@@ -58,8 +59,11 @@ public class SceneChanger : MonoBehaviour
     }
     void Logic()
     {
-        Debug.Log("Nastêpny lvl"); 
-        isWaiting = false;
-        //SceneManager.LoadScene(SceneNumber);
+        if (gameManager.isFight == false)
+        {
+            Debug.Log("Nastêpny lvl");
+            isWaiting = false;
+            //SceneManager.LoadScene(SceneNumber);
+        }
     }
 }
