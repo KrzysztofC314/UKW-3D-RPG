@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool isFight = false;
     public int Action = 1;
     public int Turn = 1;
+    private int botAmount = 0;
 
     public int CurrentDialog = 0;
 
@@ -95,6 +96,21 @@ public class GameManager : MonoBehaviour
     public void OnClickNextTurn()
     {
         Turn++;
-   
+
+        turnManager.SortByInitiative();
+        turnManager.IsBot();
+        for (int i = 0; i < turnManager.isBot.Length; i++)
+        {
+            if (turnManager.isBot[i])
+            {
+                botAmount++;
+            }
+        }
+
+        if (botAmount > 0)
+        {
+            isFight = false;
+        }
+
     }
 }
