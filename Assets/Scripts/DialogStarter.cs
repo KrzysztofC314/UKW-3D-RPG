@@ -8,6 +8,7 @@ public class DialogStarter : MonoBehaviour
     [SerializeField] private bool isInRange = false;
     [SerializeField] private bool isWaiting = false;
     [SerializeField] private NPCConversation myConv;
+    [SerializeField] private bool isForced = false;
 
     void Update()
     {
@@ -52,6 +53,10 @@ public class DialogStarter : MonoBehaviour
             }
         }
         if (isWaiting == true && isInRange == true)
+        {
+            Logic();
+        }
+        if (isForced == true && isInRange == true)
         {
             Logic();
         }

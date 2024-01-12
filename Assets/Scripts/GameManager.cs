@@ -61,6 +61,25 @@ public class GameManager : MonoBehaviour
             Turn = 1;
         }
     }
+
+    public void ONisDialog()
+    {
+        isDialog = true;
+    }
+    public void OFFisDialog()
+    {
+        isDialog = false;
+    }
+    public void ONisFight()
+    {
+        isFight = true;
+    }
+    public void OFFisFight()
+    {
+        isFight = false;
+    }
+
+
     //Skrypt do zmieniania active playera w grze
     public void SetActivePlayerTo(int player)
     {
@@ -76,6 +95,6 @@ public class GameManager : MonoBehaviour
     public void OnClickNextTurn()
     {
         Turn++;
-        
+   
     }
 }
