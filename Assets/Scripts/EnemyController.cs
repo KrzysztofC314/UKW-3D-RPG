@@ -19,7 +19,6 @@ public class EnemyController : MonoBehaviour
     private string playerTag = "Player";
     public bool isAttack = false;
 
-
     private NavMeshAgent agent;
 
     void Start()
@@ -102,6 +101,59 @@ public class EnemyController : MonoBehaviour
 
     void Moving()
     {
+        if (isDead)
+        {
+            // Jeœli przeciwnik jest martwy, zakoñcz funkcjê poruszania
+            return;
+        }
 
+        // ZnajdŸ wszystkich graczy w scenie
+        GameObject[] players = GameObject.FindGameObjectsWithTag(playerTag);
+
+        // ZnajdŸ najbli¿szego gracza
+        GameObject nearestPlayer = FindNearestPlayer(players);
+
+        // Jeœli nie ma gracza w zasiêgu ruchu, zakoñcz funkcjê poruszania
+        if (nearestPlayer == null)
+        {
+            return;
+        }
+
+        // Ustaw cel poruszania na pozycjê gracza
+        agent.SetDestination(nearestPlayer.transform.position);
+
+        // Zmniejsz MoveDistance o odleg³oœæ do celu
+        MoveDistance -= (int)Vector3.Distance(transform.position, nearestPlayer.transform.position);
+
+        // Oznacz atak, jeœli przeciwnik jest w zasiêgu ataku
+        if (IsInRange && AttackPoints > 0)
+        {
+            isAttack = true;
+        }
+
+        // Jeœli MoveDistance jest mniejsze lub równe 0, zakoñcz ruch i zmieñ turê
+        if (MoveDistance <= 0)
+        {
+            gameManager.Turn++;
+        }
+    }
+
+    GameObject FindNearestPlayer(GameObject[] players)
+    {
+        GameObject nearestPlayer = null;
+        float nearestDistance = float.MaxValue;
+
+        foreach (GameObject player in players)
+        {
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+
+            if (distance < nearestDistance)
+            {
+                nearestPlayer = player;
+                nearestDistance = distance;
+            }
+        }
+
+        return nearestPlayer;
     }
 }

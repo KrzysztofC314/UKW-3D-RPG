@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2735.9707, g: 2572.1953, b: 3302.5078, a: 1}
+  m_IndirectSpecularColor: {r: 2734.0918, g: 2570.6875, b: 3301.3203, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16723,6 +16723,7 @@ MonoBehaviour:
   NextTurn:
     m_PersistentCalls:
       m_Calls: []
+  isBot: 
   turnAmount: 0
 --- !u!114 &1307265802
 MonoBehaviour:
@@ -20445,6 +20446,7 @@ GameObject:
   - component: {fileID: 1821925313}
   - component: {fileID: 1821925314}
   - component: {fileID: 1821925315}
+  - component: {fileID: 1821925316}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -20544,7 +20546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  characterSheet: {fileID: 0}
+  characterSheet: {fileID: 1821925316}
   gameManager: {fileID: 1307265796}
   MaxMoveDistance: 10
   MoveDistance: 0
@@ -20608,6 +20610,36 @@ MonoBehaviour:
   myConv: {fileID: 2099808178}
   isForced: 0
   gameManager: {fileID: 1307265796}
+--- !u!114 &1821925316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821925305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320234c003e280e449755ef3664f4412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1307265796}
+  MaxHealth: 10
+  Health: 10
+  MaxEnergy: 10
+  Energy: 10
+  Initiative: 10
+  MaxFightAction: 1
+  FightAction: 1
+  Allience: 1
+  PlayerTurn: 1
+  Level: 1
+  Strength: 10
+  Dexterity: 10
+  Intellect: 10
+  Charisma: 10
+  HP: {fileID: 0}
+  EP: {fileID: 0}
+  isBot: 1
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
