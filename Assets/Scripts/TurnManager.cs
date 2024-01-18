@@ -11,7 +11,7 @@ public class TurnManager : MonoBehaviour
     public UnityEvent NextTurn;
     private GameManager gameManager;
     private CharacterSheet[] characterSheets;
-    [HideInInspector] public bool[] isBot;
+    public bool[] isBot;
     public int turnAmount;
 
     
@@ -44,6 +44,7 @@ public class TurnManager : MonoBehaviour
 
     public void IsBot()
     {
+        isBot = new bool[characterSheets.Length];
         for (int i = 0; i < characterSheets.Length; i++)
         {
             isBot[i] = characterSheets[i].isBot;

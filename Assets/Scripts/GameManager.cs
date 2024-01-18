@@ -95,19 +95,20 @@ public class GameManager : MonoBehaviour
 
     public void OnClickNextTurn()
     {
+        botAmount = 0;
         Turn++;
 
         turnManager.SortByInitiative();
         turnManager.IsBot();
         for (int i = 0; i < turnManager.isBot.Length; i++)
         {
-            if (turnManager.isBot[i])
+            if (turnManager.isBot[i] == true)
             {
                 botAmount++;
             }
         }
 
-        if (botAmount > 0)
+        if (botAmount <= 0)
         {
             isFight = false;
         }
